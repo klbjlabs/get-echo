@@ -45,8 +45,10 @@ Meteor.methods({
       let obj = {
         "name": jsonData.name,
         "author": jsonData.user.name,
-        "url": jsonData.source
+        "url": jsonData.source,
+        "date": new Date()
       }
+      Log.insert(obj);
       return obj;
     } catch (e) {
       // Got a network error, time-out or HTTP error in the 400 or 500 range.
