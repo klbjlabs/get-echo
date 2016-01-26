@@ -1,0 +1,24 @@
+<head>
+  <title>get-echo</title>
+</head>
+
+<body>
+  <h2>ECHO 回声下载器(测试版)</h2>
+
+  {{> content}}
+</body>
+
+<template name="content">
+  <p>请输入"视频地址":</p>
+  <input type="text" name="url" placeholder="http://www.app-echo.com/sound/357965" style="width:275px;">
+  <button type="button" name="getUrl">获取下载地址</button>
+  <div class="">
+    {{#with info}}
+    <ul>
+      <li>标题：{{name}}</li>
+      <li>上传者：{{author}}</li>
+      <li>下载地址：<a href="{{url}}">{{url}}</a></li>
+    </ul>
+    {{/with}}
+  </div>
+</template>
